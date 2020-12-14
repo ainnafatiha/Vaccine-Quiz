@@ -6,7 +6,7 @@ var quizJSON = {
     "info": {
         "name":    "Truth or Myth? - Vaccination Edition",
         "main":    "<p>Let's find out if you can tell fact from myth!</p>",
-        "results": "<h5>Learn More</h5><p>Come and check out these articles to find out more about vaccines.</p>",
+        "results": "<h5></h5><p></p>",
         "level1":  "Superior",
         "level2":  "Outstanding",
         "level3":  "Excellent",

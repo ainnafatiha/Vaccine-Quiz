@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta content="text/html; charset=utf-8" http-equiv="content-type">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
 
         <title>Vaccine Quiz</title>
 
@@ -16,6 +17,8 @@
         <div class="quizArea">
             <div class="quizHeader">
                 <!-- where the quiz main copy goes -->
+                <br>
+                <img src="vaccination-quiz-image.png" class="welcome-img" alt="DoctorOnCall">
                 <br>
                 <a class="button startQuiz" href="#">Get Started!</a>
             </div>
@@ -36,5 +39,26 @@
         <script src="js/app-config.js"></script>
         <script src="js/app.js"></script>
         <script src="js/master.js"></script>
+
+        <script>
+            window.onload = () => {
+
+            let questionsLabels = document.getElementsByClassName('custom-label');
+
+            for (let i = 0; i < questionsLabels.length; i++) {
+                questionsLabels[i].addEventListener('click', function () {
+
+                // remove sibling custom label class
+                $(this).parent().siblings().children('.custom-label')[0].classList.remove('custom-label--selected');
+
+                 // add class
+                questionsLabels[i].classList.add('custom-label--selected');
+                });
+            }
+
+
+        };
+        </script>
+
     </body>
 </html>

@@ -21,9 +21,9 @@
 }
 
 ol.questions,
-ol.questions li
 ul.answers,
 ul.responses,
+ol.questions li,
 ul.answers li,
 ul.responses li {
     list-style-type: none;

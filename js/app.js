@@ -21,7 +21,7 @@
                 nextQuestionText: 'Next &raquo;',
                 backButtonText: '',
                 completeQuizText: '',
-                tryAgainText: '',
+                tryAgainText: 'Retake the quiz',
                 questionCountText: 'Question %current of %total',
                 preventUnansweredText: 'You must select at least one answer.',
                 questionTemplateText:  '%count. %text',
@@ -31,7 +31,7 @@
                 numberOfQuestions: null,
                 randomSortQuestions: false,
                 randomSortAnswers: false,
-                preventUnanswered: false,
+                preventUnanswered: true,
                 disableScore: false,
                 disableRanking: false,
                 scoreAsPercentage: false,
@@ -39,7 +39,7 @@
                 perQuestionResponseAnswers: false,
                 completionResponseMessaging: false,
                 displayQuestionCount: true,   // Deprecate?
-                displayQuestionNumber: true,  // Deprecate?
+                displayQuestionNumber: false,  // Deprecate?
                 animationCallbacks: { // only for the methods that have jQuery animations offering callback
                     setupQuiz: function () {},
                     startQuiz: function () {},
@@ -276,12 +276,12 @@
                             if (answers.hasOwnProperty(i)) {
                                 answer   = answers[i],
                                 optionId = inputName + '_' + i.toString();
-
+                                
                                 // If question has >1 true answers and is not a select any, use checkboxes; otherwise, radios
-                                var input = '<input id="' + optionId + '" name="' + inputName +
+                                var input = '<input class="custom-input" id="' + optionId + '" name="' + inputName +
                                             '" type="' + inputType + '" /> ';
 
-                                var optionLabel = '<label for="' + optionId + '">' + answer.option + '</label>';
+                                var optionLabel = '<label class="custom-label" for="' + optionId + '">' + answer.option + '</label>';
 
                                 var answerContent = $('<li></li>')
                                     .append(input)
@@ -513,7 +513,7 @@
                 // If response messaging has been disabled or moved to completion,
                 // make sure we have an answer if we require it, let checkAnswer handle the alert messaging
                 if (plugin.config.preventUnanswered && answerInputs.length === 0) {
-                    return false;
+                    return true;
                 }
 
                 if (nextQuestion.length) {
