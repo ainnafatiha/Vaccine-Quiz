@@ -211,7 +211,7 @@
 
                 // add retry button to results view, if enabled
                 if (plugin.config.tryAgainText && plugin.config.tryAgainText !== '') {
-                    $quizResultsCopy.append('<p><a class="button ' + tryAgainClass + '" href="#">' + plugin.config.tryAgainText + '</a></p>');
+                    $quizResultsCopy.append('<p><a class="tryButton ' + tryAgainClass + '" href="#">' + plugin.config.tryAgainText + '</a></p>');
                 }
 
                 // Setup questions

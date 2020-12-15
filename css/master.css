@@ -19,19 +19,20 @@ body {
 .welcome-img {
     display: block;
     margin: 20px auto;
-    width: 40%;
+    width: 30%;
     padding-bottom: 30px;
 }
 
 @media(max-width: 576px) {
     .welcome-img {
         margin-bottom: 30px;
+        width: 40%;
     }
 }
 
 @media(max-width: 576px) {
     p {
-        font-size: 14px;
+        font-size: 11px;
         line-height: 23px;
     }
 }
@@ -67,9 +68,9 @@ h3 {
 
 @media(max-width: 576px) {
     h3 {
-        font-size: 24px;
-        margin-top: -20px;
-        line-height: 35px;
+        font-size: 17px;
+        margin-top: -40px;
+        line-height: 26px;
     }
 }
 
@@ -96,7 +97,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
 
 .button {
     width: auto;
-    padding: 15px 50px;
+    padding: 18px 50px;
     color:#ffffff;
     background-color: #5DC7F6;
     border: none;
@@ -105,15 +106,15 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     border-radius: 5px;
     box-shadow: 0 3px 6px #00000029;
     text-decoration: none;
-    margin-left: 30px;
-    margin-top: 10px;
+    /* margin-left: 30px; */
+    margin-top: 0px;
 }
 
 @media(max-width: 576px) {
     .button {
         margin-left: 8px;
-        font-size: 15px;
-        padding: 15px 35px;
+        font-size: 11px;
+        padding: 8px 21px;
     }
 }
 
@@ -125,9 +126,22 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     margin-top: 40px;
 }
 
-.tryAgain {
+.tryButton {
     float: none;
     margin: 20px 0;
+    width: auto;
+    padding: 18px 50px;
+    color:#ffffff;
+    background-color: #5DC7F6;
+    border: none;
+    font-size: 20px;
+    height: 56px;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px #00000029;
+    text-decoration: none;
+    /* margin-left: 30px; */
+    margin-top: 0px;
+
 }
 
 .custom-input {
@@ -141,7 +155,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     box-shadow: 0 2px 14px #00000029;
     color: #3c3c3c;
     display: block;
-    margin: 20px auto;
+    margin: 0px auto;
     padding: 20px;
     text-align: center;
     width: 40%;
@@ -153,7 +167,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
         font-size: 14px;
         line-height: 23px;
         padding: 10px 20px;
-        margin: 15px 0;
+        margin: -9px 0;
     }
 }
 
@@ -164,7 +178,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     box-shadow: 0 2px 14px #00000029;
     color: #fff;
     display: block;
-    margin: 20px auto;
+    margin: 0px auto;
     padding: 20px;
     text-align: center;
     width: 40%;
@@ -176,7 +190,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
         font-size: 14px;
         line-height: 23px;
         padding: 10px 20px;
-        margin: 15px 0;
+        margin: -9px 0;
     }
 }
 
@@ -238,7 +252,7 @@ ul.answers {
 
 /* fact */
 ul.responses li {
-    margin: 20px 115px 40px;
+    margin: 20px 115px 10px;
 }
 
 @media(max-width: 576px) {
@@ -247,6 +261,7 @@ ul.responses li {
     }
 }
 
+/* response for myth and truth */
 ul.responses li p span {
     display: block;
     font-weight: bold;
@@ -255,7 +270,7 @@ ul.responses li p span {
 
 @media(max-width: 576px) {
     ul.responses li p span {
-        font-size: 20px;
+        font-size: 15px;
     }
 }
 
@@ -271,8 +286,10 @@ ul.responses li.incorrect p span {
 
 /* quiz result and retake button */
 .quizResults h3 {
+    font-size: 27px;
     margin: 0;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
+    padding-top: 20px;
 }
 
 .quizResults h3 span {
@@ -283,4 +300,48 @@ ul.responses li.incorrect p span {
 .quizResultsCopy {
     clear: both;
     margin-top: 20px;
+}
+
+.speak-button {
+    background: rgb(46,90,169);
+    border-radius: 4px;
+    color: #fff;
+    height: 56px;
+    /* margin: 30px; */
+    padding: 18px 50px;
+    width: auto;
+    font-size: 20px;
+}
+
+@media(max-width: 576px) {
+    .speak-button {
+        width: auto;
+        height: 28px;
+        border-radius: 5px;
+        font: normal normal bold 11px/12px Open Sans;
+        margin: 2px;
+        padding: 5px 10px;
+    }
+}
+
+.ask-button {
+    background: rgb(46,90,169);
+    border-radius: 4px;
+    color: #fff;
+    height: 56px;
+    /* margin: 30px; */
+    padding: 18px 50px;
+    width: auto;
+    font-size: 20px;
+}
+
+@media(max-width: 576px) {
+    .ask-button {
+        width: auto;
+        height: 28px;
+        border-radius: 5px;
+        font: normal normal bold 11px/12px Open Sans;
+        margin: 2px;
+        padding: 5px 10px;
+    }
 }
