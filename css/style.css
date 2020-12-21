@@ -691,3 +691,9 @@ ul.responses li.incorrect p span {
         padding: 5px 10px;
     }
 }
+
+.quizShortText {
+  font-size: 20px;
+  padding: 35px;
+  line-height: 1.5em;
+}
