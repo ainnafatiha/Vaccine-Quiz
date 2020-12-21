@@ -1,347 +1,42 @@
-/* QUIZ STYLES */
-/* Styles to prettify the quiz page */
+/* BASE QUIZ STYLES */
+/* These styles ensure that the necessary elements are hidden for toggling */
 
-html {
-    background: #fff;
-}
+/* DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING!! */
 
-body {
-    width: 100%;
-    margin: 0 auto;
-    font-family: 'Open Sans',sans-serif;
-    font-size: 16px;
-    color: #353535;
-    line-height: 1.5em;
-    text-align: center;
-    padding-top: 50px;
-}
-
-.welcome-img {
-    display: block;
-    margin: 20px auto;
-    width: 30%;
-    padding-bottom: 30px;
-}
-
-@media(max-width: 576px) {
-    .welcome-img {
-        margin-bottom: 30px;
-        width: 40%;
-    }
-}
-
-@media(max-width: 576px) {
-    p {
-        font-size: 11px;
-        line-height: 23px;
-    }
-}
-
-h2,h4,h5,h6 {font-weight: bold;}
-
-h1 {
-    font-size: 28px;
-    margin: 0 0 20px;
-    color: #3c3c3c;
-}
-
-@media(max-width: 576px) {
-    h1 {
-        font-size: 20px;
-        padding: 10px;
-    }
-}
-
-h2 {
-    font-size: 22px;
-    margin: 15px 0;
-}
-
-/* question */
-h3 {
-    font-size: 40px;
-    margin: 15px 0 10px;
-    line-height: 49px;
-    padding-top: 40px;
-    text-align: center;
-}
-
-@media(max-width: 576px) {
-    h3 {
-        font-size: 17px;
-        margin-top: -40px;
-        line-height: 26px;
-    }
-}
-
-h4 {
-    font-size: 16px;
-    margin: 10px 0;
-}
-
-h5 {
-    font-size: 14px;
-    margin: 10px 0 5px;
-}
-
-h6 {
-    font-size: 12px;
-    margin: 5px 0;
-}
-
-strong { font-weight: bold; }
-em { font-style: italic; }
-ul { list-style-type: circle; }
-ol { list-style-type: decimal; }
-ol li { list-style-type: decimal; margin-left: 20px; }
-
-.button {
-    width: auto;
-    padding: 18px 50px;
-    color:#ffffff;
-    background-color: #5DC7F6;
-    border: none;
-    font-size: 20px;
-    height: 56px;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px #00000029;
-    text-decoration: none;
-    /* margin-left: 30px; */
-    margin-top: 0px;
-}
-
-@media(max-width: 576px) {
-    .button {
-        margin-left: 8px;
-        font-size: 11px;
-        padding: 8px 21px;
-    }
-}
-
-.button:hover {
-    background-color: #5DC7F6;
-}
-
-.startQuiz {
-    margin-top: 40px;
-}
-
-.tryButton {
-    float: none;
-    margin: 20px 0;
-    width: auto;
-    padding: 18px 50px;
-    color:#ffffff;
-    background-color: #5DC7F6;
-    border: none;
-    font-size: 20px;
-    height: 56px;
-    border-radius: 5px;
-    box-shadow: 0 3px 6px #00000029;
-    text-decoration: none;
-    /* margin-left: 30px; */
-    margin-top: 0px;
-
-}
-
-.custom-input {
+.startQuiz,
+.nextQuestion,
+.backToQuestion,
+.questions li.question,
+.questions li.question .responses,
+.questions li.question .responses .correct,
+.questions li.question .responses .incorrect,
+.quizResults {
     display: none;
 }
 
-.custom-label {
-    background-color: #fff;
-    border: 1px;
-    border-radius: 4px;
-    box-shadow: 0 2px 14px #00000029;
-    color: #3c3c3c;
+/* If response messages are disabled or only shown on quiz completion,
+   nextQuestion button IS checkAnswer button - so it must be displayed */
+.nextQuestion.checkAnswer {
     display: block;
-    margin: 0px auto;
-    padding: 20px;
-    text-align: center;
-    width: 40%;
 }
 
-@media(max-width: 576px) {
-    .custom-label {
-        width: 100%;
-        font-size: 14px;
-        line-height: 23px;
-        padding: 10px 20px;
-        margin: -9px 0;
-    }
-}
-
-.custom-label--selected {
-    background-color:  #5DC7F6;
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 14px #00000029;
-    color: #fff;
-    display: block;
-    margin: 0px auto;
-    padding: 20px;
-    text-align: center;
-    width: 40%;
-}
-
-@media(max-width: 576px) {
-    .custom-label--selected {
-        width: 100%;
-        font-size: 14px;
-        line-height: 23px;
-        padding: 10px 20px;
-        margin: -9px 0;
-    }
-}
-
-/* clearfix */
-.quizArea, .quizResults {
-    zoom: 1;
-}
-
-.quizArea:before, .quizArea:after, .quizResults:before, .quizResults:after {
-    content: "\0020";
-    display: block;
-    height: 0;
-    visibility: hidden;
-    font-size: 0;
-}
-
-.quizArea:after, .quizResults:after {
-    clear: both;
-}
-
-.questionCount {
-    font-size: 20px;
-    font-style: italic;
-}
-
-@media(max-width: 576px) {
-    .questionCount {
-        font-size: 10px;
-    }
-}
-
-.questionCount span {
-    font-weight: bold;
-}
-
-ol.questions {
-    margin-top: 20px;
-    margin-left: 0;
-}
-
-/* truth or myth options */
-ol.questions li {
-    margin-left: 0;
-    font-size: 24px;
-    padding: 20px;
-    display: inline;
-    line-height: 1.5em;
-}
-
-ul.answers {
-    margin: 0;
-}
-
-@media(max-width: 576px) {
-    ul.answers {
-        margin: 0 40px 14px 0;
-    }
-}
-
-/* fact */
+ol.questions,
+ul.answers,
+ul.responses,
+ol.questions li,
+ul.answers li,
 ul.responses li {
-    margin: 20px 115px 10px;
+    list-style-type: none;
 }
 
-@media(max-width: 576px) {
-    ul.responses li {
-        margin: 0 0 10px
-    }
-}
-
-/* response for myth and truth */
-ul.responses li p span {
-    display: block;
-    font-weight: bold;
-    font-size: 28px;
-}
-
-@media(max-width: 576px) {
-    ul.responses li p span {
-        font-size: 15px;
-    }
-}
-
-.complete ul.answers li.correct, ul.responses li.correct p span {
-    padding-bottom: 15px;
-    color: #6C9F2E;
-}
-
-ul.responses li.incorrect p span {
-    padding-bottom: 15px;
-    color: #B5121B;
-}
-
-/* quiz result and retake button */
-.quizResults h3 {
-    font-size: 27px;
-    margin: 0;
-    padding-bottom: 10px;
-    padding-top: 20px;
-}
-
-.quizResults h3 span {
-    font-weight: normal;
-    font-style: italic;
-}
-
-.quizResultsCopy {
-    clear: both;
-    margin-top: 20px;
-}
-
-.speak-button {
-    background: rgb(46,90,169);
-    border-radius: 4px;
-    color: #fff;
-    height: 56px;
-    /* margin: 30px; */
-    padding: 18px 50px;
-    width: auto;
-    font-size: 20px;
-}
-
-@media(max-width: 576px) {
-    .speak-button {
-        width: auto;
-        height: 28px;
-        border-radius: 5px;
-        font: normal normal bold 11px/12px Open Sans;
-        margin: 2px;
-        padding: 5px 10px;
-    }
-}
-
-.ask-button {
-    background: rgb(46,90,169);
-    border-radius: 4px;
-    color: #fff;
-    height: 56px;
-    /* margin: 30px; */
-    padding: 18px 50px;
-    width: auto;
-    font-size: 20px;
-}
-
-@media(max-width: 576px) {
-    .ask-button {
-        width: auto;
-        height: 28px;
-        border-radius: 5px;
-        font: normal normal bold 11px/12px Open Sans;
-        margin: 2px;
-        padding: 5px 10px;
-    }
+/* Accessibility */
+.quizName span:first-child {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }

@@ -1,3 +1,12 @@
+// TABLE OF CONTENT
+// 1. DECLARE FUNCTION
+// 2. INSERT HEADER
+// 3. DEPRECATION
+// 4.  SET UP QUESTIONS
+// 5. CALCULATE MARKS
+// 6. BIND OTHER BUTTONS
+
+
 /*!
  * SlickQuiz jQuery Plugin
  * http://github.com/jewlofthelotus/SlickQuiz
@@ -10,6 +19,7 @@
  * @license MIT
  */
 
+ // 1. DECLARE FUNCTION
 (function($){
     $.slickQuiz = function(element, options) {
         var plugin   = this,
@@ -109,6 +119,71 @@
             $quizLevel             = $(_quizLevel)
         ;
 
+// 2. INSERT HEADER
+let headertemp = `<header class="container-fluid header" onclick="openAlert()">
+<!-- start a tag for logo -->
+<a href="https://www.doctoroncall.com.my" class="doc-header-logo"> <img class="header-logo" src="https://doc-cdn.s3-ap-southeast-1.amazonaws.com/home/new_home/doctoroncall-logo-png.png" alt="DoctorOnCall logo">
+</a>
+<!-- end of a tag for logo -->
+<input class="header-menu-btn" type="checkbox" id="menu-btn">
+<label class="header-menu-icon" for="menu-btn"><span class="navicon"></span></label>
+
+<!-- start ul for content in header -->
+<div class="header-menu" id="menu-header">
+
+    <!--Mobile only login design-->
+    <div class="icon-userlogin mobile-only header-user-link-mobile">
+        <!--<img src="/images/default-user.svg" loading="lazy"> Container for user image-->
+        <a id="header-login-account-mobile" href="https://www.doctoroncall.com.my/health-centre/account" style="display: none;">
+            <svg viewBox="0 0 172 172">
+                <path d="M0,172v-172h172v172z" fill="none"></path>
+                <path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="#ebebeb"></path>
+                <path d="M103.01725,106.50563c-0.4085,-4.43975 -0.24725,-7.53575 -0.24725,-11.5885c2.01025,-1.0535 5.6115,-7.77225 6.2135,-13.44825c1.58025,-0.129 4.07425,-1.66625 4.80525,-7.75075c0.387,-3.268 -1.17175,-5.10625 -2.1285,-5.68675c2.56925,-7.72925 7.912,-31.648 -9.8685,-34.1205c-1.83825,-3.21425 -6.52525,-4.8375 -12.60975,-4.8375c-24.37025,0.4515 -27.305,18.404 -21.96225,38.958c-0.95675,0.5805 -2.5155,2.41875 -2.1285,5.68675c0.74175,6.0845 3.225,7.62175 4.80525,7.75075c0.602,5.676 4.343,12.39475 6.364,13.44825c0,4.05275 0.1505,7.14875 -0.258,11.5885c-4.816,12.9645 -37.3455,9.32025 -38.8505,34.32475h104.576c-1.505,-25.0045 -33.89475,-21.36025 -38.71075,-34.32475z">
+                </path>
+                <path d="M86,172c-47.49649,0 -86,-38.50351 -86,-86v0c0,-47.49649 38.50351,-86 86,-86v0c47.49649,0 86,38.50351 86,86v0c0,47.49649 -38.50351,86 -86,86z" fill="none"></path>
+                <path d="M86,168.56c-45.59663,0 -82.56,-36.96337 -82.56,-82.56v0c0,-45.59663 36.96337,-82.56 82.56,-82.56v0c45.59663,0 82.56,36.96337 82.56,82.56v0c0,45.59663 -36.96337,82.56 -82.56,82.56z" fill="none"></path>
+            </svg>My Account</a>
+    </div>
+
+    <div class="header-menu-div"> <a class="header-link" href="https://www.doctoroncall.com.my/health-centre">Health Screening</a></div>
+    <div class="header-menu-div"> <a class="header-link" href="https://www.doctoroncall.com.my/tanya">Ask Doctor </a></div>
+    <div class="header-menu-div"> <a class="header-link linkHeader" href="https://www.doctoroncall.com.my/online-doctor" onclick="ga('send', 'event', 'MedicineTrack', 'Consult a Doctor', 'ProductPage');"> Consult Doctor </a></div>
+    <div class="header-menu-div"> <a class="header-link" href="https://www.doctoroncall.com.my/health-centre"> Online Pharmacy </a> </div>
+    <div class="header-menu-div"> <a class="header-link" href="https://www.doctoroncall.com.my/find-doctor"> Book Appointment </a></div>
+    <div class="header-menu-div header-more-content">
+        <a class="header-link desktop-only"> More <svg class="header-more-icon" viewBox="0 0 50 50">
+        <path d="M 4.84375 12.90625 L 2.75 15 L 25 37.25 L 47.25 15 L 45.15625 12.90625 L 25 33.0625 Z ">
+        </path>
+        </svg></a>
+        <!-- start div for header content in desktop -->
+        <div class="header-dropdown-content">
+          <a href="https://www.doctoroncall.com.my/about-us"> About Us</a>
+          <a href="https://www.doctoroncall.com.my/soalan">Health Q&A</a>
+          <a href="https://www.doctoroncall.com.my/penyakit-a-z">Read Health Articles</a>
+          <a href="https://www.doctoroncall.com.my/faq">FAQ</a>
+          <a href="https://www.doctoroncall.com.my/media">Media</a>
+          <a href="https://www.doctoroncall.com.my/career">Careers</a>
+          <a href="https://www.doctoroncall.com.my/panel-doctor">Panel Doctors</a>
+          <a href="https://www.doctoroncall.com.my/corporate-partnership">Corporate Partnerships</a>
+          <a href="https://www.doctoroncall.com.my/contact-us">Contact Us</a>
+        </div>
+    </div>
+
+    <a class="header-user-link" href="https://www.doctoroncall.com.my/health-centre/account">
+        <svg id="header-login-account" viewBox="0 0 20 20" style="display: none;">
+            <path d="M10.1,0.1c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10c5.5,0,10-4.5,10-10C20.1,4.6,15.6,0.1,10.1,0.1z    M10.1,2.2c2.2,0,3.9,1.8,3.9,3.9c0,2.2-1.8,3.9-3.9,3.9S6.2,8.3,6.2,6.1C6.2,3.9,7.9,2.2,10.1,2.2z M10.1,19.6   c-2.8,0-5.3-1.2-7-3.1c0-2.9,2.4-5.1,7-5.1s7,2.1,7,5.1C15.4,18.3,12.9,19.6,10.1,19.6z"></path>
+        </svg>
+    </a>
+
+    <div class="header-menu-div-signup">
+        <a id="header-login-signup" class="button-login-signup desktop-only" onclick="redirectSignUp()" href="#" style="display: inline-block;">Sign Up / Login</a>
+    </div>
+
+</div>
+<!-- end of ul for content in header -->
+</header>`
+
+// 3. DEPRECATION
 
         // Reassign user-submitted deprecated options
         var depMsg = '';
@@ -148,7 +223,7 @@
         }
         // End of deprecation reassignment
 
-
+// 4. SET UP QUESTIONS
         plugin.config = $.extend(defaults, options);
 
         // Set via json option or quizJSON variable (see slickQuiz-config.js)
@@ -655,6 +730,8 @@
                 }
             },
 
+    //5. CALCULATE MARKS
+
             // Calculates knowledge level based on number of correct answers
             calculateLevel: function(correctAnswers) {
                 var percent = (correctAnswers / questionCount).toFixed(2),
@@ -693,6 +770,8 @@
                     plugin.method.startQuiz.apply (null, [{callback: plugin.config.animationCallbacks.startQuiz}]);
                 }
             });
+
+    //6. BIND OTHER BUTTONS
 
             // Bind "try again" button
             $(_element + ' ' + _tryAgainBtn).on('click', function(e) {
