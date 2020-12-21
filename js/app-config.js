@@ -80,9 +80,9 @@ var quizJSON = {
                 {"option": "Myth",      "correct": false},
                 {"option": "Truth",   "correct": true} // no comma here
             ],
-            "correct": "<p><span>That's correct, it is a truth!</span> When a large amount of community is vaccinated against a disease, it reduces the change of an outbreak ('herd immunity').<br>Infants, pregnant women and people with wekaer immune systems can't receive vaccines and depend on this form of protection.<br>If too many people rely on herd immunity to prevent infection from vaccine-preventable disease, herd immunity will disappear.</p>",
+            "correct": "<p><span>That's correct, it is a truth!</span> When a large amount of community is vaccinated against a disease, it reduces the change of an outbreak ('herd immunity').<br>Infants, pregnant women and people with weaker immune systems can't receive vaccines and depend on this form of protection.<br>If too many people rely on herd immunity to prevent infection from vaccine-preventable disease, herd immunity will disappear.</p>",
             
-            "incorrect": "<p><span>Oops, actually the answer is truth.</span> When a large amount of community is vaccinated against a disease, it reduces the change of an outbreak ('herd immunity').<br>Infants, pregnant women and people with wekaer immune systems can't receive vaccines and depend on this form of protection.<br>If too many people rely on herd immunity to prevent infection from vaccine-preventable disease, herd immunity will disappear.</p>" // no comma here
+            "incorrect": "<p><span>Oops, actually the answer is truth.</span> When a large amount of community is vaccinated against a disease, it reduces the change of an outbreak ('herd immunity').<br>Infants, pregnant women and people with weaker immune systems can't receive vaccines and depend on this form of protection.<br>If too many people rely on herd immunity to prevent infection from vaccine-preventable disease, herd immunity will disappear.</p>" // no comma here
         },
         { // Question 8
             "q": "Healthy adults still need vaccines",
@@ -90,9 +90,9 @@ var quizJSON = {
                 {"option": "Myth",      "correct": false},
                 {"option": "Truth",   "correct": true} // no comma here
             ],
-            "correct": "<p><span>That's correct, it is a truth!</span> Even if you are healthy, your immune system will weaken as you continue to age.<br>At the ageof 65 or above, adults are at an 8x higher risk of being hospitalized due to infection when compared to those who are younger than 50.</p>",
+            "correct": "<p><span>That's correct, it is a truth!</span> Even if you are healthy, your immune system will weaken as you continue to age.<br>At the age of 65 or above, adults are at an 8x higher risk of being hospitalized due to infection when compared to those who are younger than 50.</p>",
             
-            "incorrect": "<p><span>Oops, actually the answer is truth.</span> Even if you are healthy, your immune system will weaken as you continue to age.<br>At the ageof 65 or above, adults are at an 8x higher risk of being hospitalized due to infection when compared to those who are younger than 50.</p>" // no comma here
+            "incorrect": "<p><span>Oops, actually the answer is truth.</span> Even if you are healthy, your immune system will weaken as you continue to age.<br>At the age of 65 or above, adults are at an 8x higher risk of being hospitalized due to infection when compared to those who are younger than 50.</p>" // no comma here
         },
         { // Question 9
             "q": "Vaccines are not effective in adults",
