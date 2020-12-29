@@ -2,9 +2,10 @@
 // 1. DECLARE FUNCTION
 // 2. INSERT HEADER
 // 3. DEPRECATION
-// 4.  SET UP QUESTIONS
+// 4. SET UP QUESTIONS
 // 5. CALCULATE MARKS
 // 6. BIND OTHER BUTTONS
+// 7. CHANGE LANGUAGE
 
 
 /*!
@@ -19,6 +20,8 @@
  * @license MIT
  */
 
+
+ 
  // 1. DECLARE FUNCTION
 (function($){
     $.slickQuiz = function(element, options) {
@@ -183,6 +186,7 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
 <!-- end of ul for content in header -->
 </header>`
 
+
 // 3. DEPRECATION
 
         // Reassign user-submitted deprecated options
@@ -223,9 +227,14 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
         }
         // End of deprecation reassignment
 
+        
 // 4. SET UP QUESTIONS
         plugin.config = $.extend(defaults, options);
 
+        //change langugae pack
+        quizJSON=changeLanguagePack();
+        
+        //console.log(quizJSON.lang)
         // Set via json option or quizJSON variable (see slickQuiz-config.js)
         var quizValues = (plugin.config.json ? plugin.config.json : typeof quizJSON != 'undefined' ? quizJSON : null);
 
@@ -281,7 +290,7 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
 
                 $quizName.hide().html(plugin.config.nameTemplateText
                     .replace('%name', quizValues.info.name) ).fadeIn(1000, kN(key,1));
-                $quizHeader.hide().prepend($('<div class="quizDescription">' + quizValues.info.main + '</div>')).fadeIn(1000, kN(key,2));
+                $quizHeader.hide().prepend($('<div class="quizDescription" style="text-align: center;">' + quizValues.info.main + '</div>')).fadeIn(1000, kN(key,2));
                 $quizResultsCopy.append(quizValues.info.results);
 
                 // add retry button to results view, if enabled
@@ -429,7 +438,7 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
                 function start(options) {
                     var firstQuestion = $(_element + ' ' + _questions + ' li').first();
                     if (firstQuestion.length) {
-                        firstQuestion.fadeIn(500, function () {
+                        firstQuestion.fadeIn(200, function () {
                             if (options && options.callback) options.callback ();
                         });
                     }
@@ -821,3 +830,52 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
         });
     };
 })(jQuery);
+
+//7. CHANGE LANGUAGE
+let lang="en";
+let trans="bm";
+let quizJSON = quizJSON_en;
+
+function changeLanguage() {
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlLang = urlParams.get('lang');
+
+  //check define/undefine
+  if (urlLang) {
+    if (urlLang=='bm') {
+      lang = urlLang;
+      trans="en";
+    
+    }
+  }
+
+  //define translation url
+  let translation="?lang="+trans;
+
+  //change the urls
+  let newUrl = window.location.origin+window.location.pathname+translation;
+  window.location.href=newUrl;
+}
+
+function changeLanguagePack() {
+console.log("changingLanguagePack")
+  //detect current language
+  const urlParams = new URLSearchParams(window.location.search);
+  const lang = urlParams.get('lang');
+  console.log(lang)
+    if (lang=='bm') {
+        console.log("changeToBm")
+      return quizJSON_bm;
+    }
+    else {
+        return quizJSON_en;
+    }
+  }
+
+
+
+// window.addEventListener('DOMContentLoaded', (event) => {
+//   console.log('DOM fully loaded and parsed');
+
+// })

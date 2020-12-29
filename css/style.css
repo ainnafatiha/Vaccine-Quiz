@@ -36,7 +36,10 @@ body {
     font-size: 16px;
     color: #353535;
     line-height: 1.5em;
-    text-align: center;
+}
+
+.container {
+  text-align: center;
 }
 
 /* 2. HEADER */
@@ -135,7 +138,7 @@ body {
     }
     
     
-    @media (max-width: 960px) {
+    @media (max-width: 1140px) {
       .header .header-menu {
         background-color: #fff;
         /* border-bottom: 1px solid #ddd; */
@@ -160,13 +163,13 @@ body {
       user-select: none;
     }
     
-    @media (min-width: 960px) {
+    @media (min-width: 1140px) {
       .header .header-menu-icon {
         display: none;
       }
     }
     
-    @media (max-width:960px) {
+    @media (max-width:1140px) {
       .header .header-menu-icon {
         display: block;
       }
@@ -374,6 +377,51 @@ body {
     }
 }
 
+/* 5. CHANGE LANGUAGE BUTTON */
+.bahasa-button {
+  background: #4575CB;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px var(--shadow1);
+  font-size: 16px;
+  font-weight: 600;
+  height: 56px;
+  margin: 10px;
+  padding: 15px 50px;
+  transition: all .35s ease-in;
+}
+
+@media(max-width: 576px) {
+  .bahasa-button {
+    margin-left: 8px;
+    font-size: 11px;
+    padding: 8px 21px;
+  }
+}
+
+.en-button {
+    background: #4575CB;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px var(--shadow1);
+    font-size: 16px;
+    font-weight: 600;
+    height: 56px;
+    margin: 10px;
+    padding: 15px 50px;
+    transition: all .35s ease-in;
+}
+
+@media(max-width: 576px) {
+  .en-button {
+    margin-left: 8px;
+    font-size: 11px;
+    padding: 8px 21px;
+  }
+}
+
 h2,h4,h5,h6 {font-weight: bold;}
 
 /* 4. WELCOME TEXT */
@@ -382,6 +430,7 @@ h1 {
     margin: 0 0 20px;
     color: #3c3c3c;
     padding-top: 50px;
+    text-align: center;
 }
 
 @media(max-width: 576px) {
@@ -390,6 +439,8 @@ h1 {
         padding: 10px;
     }
 }
+
+
 
 h2 {
     font-size: 22px;
@@ -499,6 +550,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     color: #3c3c3c;
     display: block;
     margin: 0px auto;
+    margin-bottom: 10px;
     padding: 20px;
     text-align: center;
     width: 40%;
@@ -511,6 +563,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
         line-height: 23px;
         padding: 10px 20px;
         margin: -9px 0;
+        margin-left: 20px;
     }
 }
 
@@ -522,6 +575,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
     color: #fff;
     display: block;
     margin: 0px auto;
+    margin-bottom: 10px;
     padding: 20px;
     text-align: center;
     width: 40%;
@@ -534,6 +588,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
         line-height: 23px;
         padding: 10px 20px;
         margin: -9px 0;
+        margin-left: 20px;
     }
 }
 
@@ -578,7 +633,7 @@ ol.questions {
 /* 11. TRUTH OR MYTH OPTIONS */
 ol.questions li {
     margin-left: 0;
-    font-size: 24px;
+    font-size: 20px;
     padding: 20px;
     display: inline;
     line-height: 1.5em;
@@ -651,8 +706,8 @@ ul.responses li.incorrect p span {
     background: rgb(46,90,169);
     border-radius: 4px;
     color: #fff;
+    display: inline-block;
     height: 56px;
-    /* margin: 30px; */
     padding: 18px 50px;
     width: auto;
     font-size: 20px;
@@ -674,11 +729,12 @@ ul.responses li.incorrect p span {
     background: rgb(46,90,169);
     border-radius: 4px;
     color: #fff;
+    display: inline-block;
     height: 56px;
-    /* margin: 30px; */
     padding: 18px 50px;
     width: auto;
     font-size: 20px;
+    margin: 10px;
 }
 
 @media(max-width: 576px) {
