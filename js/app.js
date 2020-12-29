@@ -1,4 +1,5 @@
 // TABLE OF CONTENT
+
 // 1. DECLARE FUNCTION
 // 2. INSERT HEADER
 // 3. DEPRECATION
@@ -227,7 +228,7 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
         }
         // End of deprecation reassignment
 
-        
+
 // 4. SET UP QUESTIONS
         plugin.config = $.extend(defaults, options);
 
@@ -434,6 +435,11 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
                 key = internal.method.getKey (1); // how many notches == how many jQ animations you will run
                 keyNotch = internal.method.getKeyNotch; // a function that returns a jQ animation callback function
                 kN = keyNotch; // you specify the notch, you get a callback function for your animation
+
+
+                // Hide the first and last page
+                document.getElementsByClassName('quizName')[0].style.display = 'none';
+                document.getElementsByClassName('quizHeader')[0].style.display = 'none';
 
                 function start(options) {
                     var firstQuestion = $(_element + ' ' + _questions + ' li').first();
@@ -846,7 +852,6 @@ function changeLanguage() {
     if (urlLang=='bm') {
       lang = urlLang;
       trans="en";
-    
     }
   }
 
@@ -860,18 +865,20 @@ function changeLanguage() {
 
 function changeLanguagePack() {
 console.log("changingLanguagePack")
-  //detect current language
+  
+//detect current language
   const urlParams = new URLSearchParams(window.location.search);
   const lang = urlParams.get('lang');
   console.log(lang)
-    if (lang=='bm') {
+    
+  if (lang=='bm') {
         console.log("changeToBm")
       return quizJSON_bm;
     }
     else {
         return quizJSON_en;
     }
-  }
+}
 
 
 
