@@ -119,7 +119,7 @@ var quizJSON_bm = {
     lang:"bm",
     "info": {
         "name":    "Fakta atau Mitos? - Edisi Penyuntikan Vaksin",
-        "main":    "<p>Let's find out if you can tell fact from myth!</p>",
+        "main":    "<p>Adakah semua fakta yang anda tahu adalah fakta? Atau ianya hanya mitos semata-mata?</p>",
         "results": "<h5></h5><p></p>",
         "level1":  "Superior",
         "level2":  "Outstanding",
@@ -199,14 +199,14 @@ var quizJSON_bm = {
             "incorrect": "<p><span>Oops, actually the answer is truth.</span> When a large amount of community is vaccinated against a disease, it reduces the change of an outbreak ('herd immunity').<br>Infants, pregnant women and people with weaker immune systems can't receive vaccines and depend on this form of protection.<br>If too many people rely on herd immunity to prevent infection from a vaccine-preventable disease, herd immunity will disappear.</p>" // no comma here
         },
         { // Question 8
-            "q": "Healthy adults still need vaccines",
+            "q": "Orang dewasa yang sihat masih memerlukan suntikan vaksin",
             "a": [
                 {"option": "Mitos",      "correct": false},
                 {"option": "Fakta",   "correct": true} // no comma here
             ],
-            "correct": "<p><span>That's correct, it is a truth!</span> Even if you are healthy, your immune system will weaken as you continue to age.<br>At the age of 65 or above, adults are at an 8x higher risk of being hospitalized due to infection when compared to those who are younger than 50.</p>",
+            "correct": "<p><span>Ya, ini adalah fakta!</span> Walaupun ada seorang yang sihat, sistem imun anda akan bertambah lemah semakin usia anda meningkat.<br>Pada umur 65 tahun ke atas, seorang dewasa mempunyai risiko sebanyak 8 kali ganda untuk dimasukkan ke hospital disebabkan oleh jangkitan berbanding dengan individu yang berusia 50 tahun dan ke bawah.</p>",
             
-            "incorrect": "<p><span>Oops, actually the answer is truth.</span> Even if you are healthy, your immune system will weaken as you continue to age.<br>At the age of 65 or above, adults are at an 8x higher risk of being hospitalized due to infection when compared to those who are younger than 50.</p>" // no comma here
+            "incorrect": "<p><span>Oops, jawapannya adalah fakta!</span> Walaupun ada seorang yang sihat, sistem imun anda akan bertambah lemah semakin usia anda meningkat.<br>Pada umur 65 tahun ke atas, seorang dewasa mempunyai risiko sebanyak 8 kali ganda untuk dimasukkan ke hospital disebabkan oleh jangkitan berbanding dengan individu yang berusia 50 tahun dan ke bawah.</p>" // no comma here
         },
         { // Question 9
             "q": "Vaccines are not effective in adults",

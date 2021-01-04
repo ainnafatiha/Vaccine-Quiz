@@ -35,7 +35,7 @@
                 nextQuestionText: 'Next &raquo;',
                 backButtonText: '',
                 completeQuizText: '',
-                tryAgainText: 'Retake the quiz',
+                tryAgainText: '',
                 questionCountText: 'Question %current of %total',
                 preventUnansweredText: 'You must select at least one answer.',
                 questionTemplateText:  '%count. %text',
@@ -404,7 +404,7 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + ' ' + checkAnswerClass + '">' + nextText + '</a>');
                         } else {
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + '">' + nextText + '</a>');
-                            questionHTML.append('<a href="#" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');
+                            questionHTML.append('<a href="#" id="checkAnswerText" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');
                         }
 
                         // Append question & answers to quiz
@@ -837,6 +837,27 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
     };
 })(jQuery);
 
+let langPack = { 
+    en: {
+      "b-start":'Get Started!',
+      "b-score":'You Scored: ',
+      "b-level":'Ranking: ',
+      "b-shortText":'DoctorOnCall has a wide range of vaccines which extends past those offered within the National Immunization Program (NIP) – book an appointment with one of our doctors to get further protection for you and your child!',
+      "b-ask":'Click HERE to ask free question',
+      "b-speak":'Click HERE to consult our doctors',
+      "nextQuestionText": 'Next &raquo;'
+    },
+    bm: {
+        "b-start":'Mula Menjawab',
+        "b-score":'Markah Anda: ',
+        "b-level":'Kategori: ',
+        "b-shortText":'Bahasa Melayu DoctorOnCall has a wide range of vaccines which extends past those offered within the National Immunization Program (NIP) – book an appointment with one of our doctors to get further protection for you and your child!',
+        "b-ask":'Tanya Soalan Secara Percuma',
+        "b-speak":'Konsultasi Doktor Atas Talian',
+        "nextQuestionText": 'Seterusnya &raquo;'
+    }
+    }
+
 //7. CHANGE LANGUAGE
 let lang="en";
 let trans="bm";
@@ -869,16 +890,31 @@ console.log("changingLanguagePack")
 //detect current language
   const urlParams = new URLSearchParams(window.location.search);
   const lang = urlParams.get('lang');
-  console.log(lang)
+  //console.log(lang);
+  for (key in langPack[lang]) {
+    console.log("step 1 in for loop key is ",key);
+    try {
+      console.log("step2 if key exist",langPack[lang][key]);
+      document.getElementById(key).innerHTML=langPack[lang][key];
     
+    } catch(e) {
+      console.log("step 3 if key does not exist",key);
+      console.log("the error",e);
+    }
+  }
+
+  
   if (lang=='bm') {
-        console.log("changeToBm")
+      console.log("changeToBm")
       return quizJSON_bm;
     }
     else {
         return quizJSON_en;
     }
+
+    
 }
+
 
 
 
