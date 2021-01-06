@@ -39,7 +39,7 @@ body {
     line-height: 1.5em;
 }
 
-.container {
+.container-body {
   text-align: center;
 }
 
@@ -415,14 +415,14 @@ _    _ _          _  _ _
 .welcome-img {
     display: block;
     margin: 20px auto;
-    width: 30%;
-    padding-bottom: 30px;
+    width: 45%;
+    padding-bottom: 20px;
 }
 
 @media(max-width: 576px) {
     .welcome-img {
-        margin-bottom: 30px;
-        width: 40%;
+        width: 75%;
+        padding-bottom: 0;
     }
 }
 
@@ -430,6 +430,7 @@ _    _ _          _  _ _
     p {
         font-size: 13px;
         line-height: 23px;
+        padding: 0 20px 0;
     }
 }
 
@@ -439,7 +440,6 @@ _    _ _          _  _ _
   color: #fff;
   border: none;
   border-radius: 4px;
-  box-shadow: 0 3px 6px var(--shadow1);
   font-size: 16px;
   font-weight: 600;
   height: 56px;
@@ -451,7 +451,7 @@ _    _ _          _  _ _
 @media(max-width: 576px) {
   .bahasa-button {
     margin-left: 8px;
-    font-size: 11px;
+    font-size: 15px;
     padding: 8px 21px;
   }
 }
@@ -461,7 +461,6 @@ _    _ _          _  _ _
     color: #fff;
     border: none;
     border-radius: 4px;
-    box-shadow: 0 3px 6px var(--shadow1);
     font-size: 16px;
     font-weight: 600;
     height: 56px;
@@ -473,7 +472,7 @@ _    _ _          _  _ _
 @media(max-width: 576px) {
   .en-button {
     margin-left: 8px;
-    font-size: 11px;
+    font-size: 15px;
     padding: 8px 21px;
   }
 }
@@ -560,7 +559,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
 @media(max-width: 576px) {
     .button {
         margin-left: 8px;
-        font-size: 14px;
+        font-size: 15px;
         padding: 8px 21px;
     }
 }
@@ -664,6 +663,7 @@ ol li { list-style-type: decimal; margin-left: 20px; }
 .quizArea:after, .quizResults:after {
     clear: both;
 }
+
 
 /* 10. QUESTION COUNT */
 .questionCount {
@@ -820,29 +820,19 @@ ul.responses li.incorrect p span {
 
 .quizShortText {
   font-size: 20px;
-  padding: 10px;
+  padding: 0 200px 0 200px;
   line-height: 1.5em;
 }
 
 @media(max-width: 576px) {
   .quizShortText {
     font-size: 13px;
+    padding: 0 50px;
+    line-height: 1.5em;
   }
 }
 
 /* 16. FOOTER */
-
-/*
-__ __   __ ___ __ ___
-|  _/ _ \ / _ \_   _|  __|  _ \
-| |_ | |  | | |  | | | |  | |_  | |__) |
-|  _|| |  | | |  | | | |  |  _| |  _  /
-| |   | |_| | || | | |  | |_| | \ \
-||    \_/ \__/  ||  |__||  \_\
-
-
-*/
-/* 3. footer */
 
 .footer {
   background-color: #f6f6f6;

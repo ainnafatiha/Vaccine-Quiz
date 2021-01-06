@@ -31,8 +31,8 @@
             _element = '#' + $element.attr('id'),
 
             defaults = {
-                checkAnswerText:  'Check My Answer!',
-                nextQuestionText: 'Next &raquo;',
+                checkAnswerText: ' <span class="en-text">Check My Answer!</span><span class="bm-text">Semak Jawapan</span>',
+                nextQuestionText: '<span class="en-text">Next &raquo;</span><span class="bm-text">Seterusnya &raquo;</span>',
                 backButtonText: '',
                 completeQuizText: '',
                 tryAgainText: '',
@@ -404,7 +404,7 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + ' ' + checkAnswerClass + '">' + nextText + '</a>');
                         } else {
                             questionHTML.append('<a href="#" class="button ' + nextQuestionClass + '">' + nextText + '</a>');
-                            questionHTML.append('<a href="#" id="checkAnswerText" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');
+                            questionHTML.append('<a href="#" id="checkAnswerId" class="button ' + checkAnswerClass + '">' + plugin.config.checkAnswerText + '</a>');
                         }
 
                         // Append question & answers to quiz
@@ -837,28 +837,30 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
     };
 })(jQuery);
 
+
+//7. CHANGE LANGUAGE
 let langPack = { 
     en: {
       "b-start":'Get Started!',
-      "b-score":'You Scored: ',
-      "b-level":'Ranking: ',
+    //   "b-score":'You Scored: ',
+    //   "b-level":'Ranking: ',
       "b-shortText":'DoctorOnCall has a wide range of vaccines which extends past those offered within the National Immunization Program (NIP) – book an appointment with one of our doctors to get further protection for you and your child!',
       "b-ask":'Click HERE to ask free question',
-      "b-speak":'Click HERE to consult our doctors',
-      "nextQuestionText": 'Next &raquo;'
+      "b-speak":'Click HERE to consult our doctors'
+      
     },
     bm: {
         "b-start":'Mula Menjawab',
-        "b-score":'Markah Anda: ',
-        "b-level":'Kategori: ',
-        "b-shortText":'Bahasa Melayu DoctorOnCall has a wide range of vaccines which extends past those offered within the National Immunization Program (NIP) – book an appointment with one of our doctors to get further protection for you and your child!',
+        // "b-score":'Markah Anda: ',
+        // "b-level":'Kategori: ',
+        "b-shortText":'DoctorOnCall mempunyai pelbagai jenis vaksin seperti yang ditawarkan dalam Program Imunisasi Nasional (NIP) - buat janji temu dengan salah seorang doktor kami untuk mendapatkan perlindungan lebih lanjut bagi anda dan keluarga anda!',
         "b-ask":'Tanya Soalan Secara Percuma',
-        "b-speak":'Konsultasi Doktor Atas Talian',
-        "nextQuestionText": 'Seterusnya &raquo;'
+        "b-speak":'Konsultasi Doktor Atas Talian'
+        
     }
     }
 
-//7. CHANGE LANGUAGE
+
 let lang="en";
 let trans="bm";
 let quizJSON = quizJSON_en;
@@ -902,23 +904,37 @@ console.log("changingLanguagePack")
       console.log("the error",e);
     }
   }
-
   
   if (lang=='bm') {
+      //hide lamguage
+      hideLanguageClasses("en") 
       console.log("changeToBm")
       return quizJSON_bm;
     }
     else {
+        hideLanguageClasses("bm")
         return quizJSON_en;
     }
-
-    
 }
 
+function hideLanguageClasses(input) {
+    var classes = document.getElementsByClassName(input + "-text" )
+    //to change to class list
+    for (var i =0; i<classes.length; i++) {
+        classes[i].style.display = "none";
+    }
+} 
 
+//setiap kali load page, what function is used
+window.addEventListener('DOMContentLoaded', (event) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const lang = urlParams.get('lang');
+    if (lang=='bm') {
+        //hide lamguage
+        hideLanguageClasses("en")
+      }
+      else {
+          hideLanguageClasses("bm")
+      }
 
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-//   console.log('DOM fully loaded and parsed');
-
-// })
+})
