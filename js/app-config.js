@@ -121,11 +121,11 @@ var quizJSON_bm = {
         "name":    "Fakta atau Mitos? - Edisi Penyuntikan Vaksin",
         "main":    "<p>Mari lihat sama ada anda dapat membezakan antara mitos dan fakta!</p>",
         "results": "<h5></h5><p></p>",
-        "level1":  "Superior",
-        "level2":  "Outstanding",
-        "level3":  "Excellent",
-        "level4":  "Good",
-        "level5":  "Fair" // no comma here
+        "level1":  "Hebat",
+        "level2":  "Bagus",
+        "level3":  "Sederhana",
+        "level4":  "Memuaskan",
+        "level5":  "Lemah" // no comma here
     },
     "questions": [
         { // Question 1 

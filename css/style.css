@@ -759,8 +759,8 @@ ul.responses li.incorrect p span {
 }
 
 /* 15. SPEAK TO DOCTOR BUTTON */
-.speak-button {
-    background: #5DC7F6;
+/* .speak-button {
+    background: #d65858;
     border-radius: 4px;
     color: #fff;
     display: inline-block;
@@ -779,19 +779,31 @@ ul.responses li.incorrect p span {
       margin: 0;
       padding: 1px 10px;
     }
-}
+} */
 
 /* 16. ASK QUESTION BUTTON */
 .ask-button {
-    background: #4575CB;
+    background: #d65858;
     border-radius: 4px;
     color: #fff;
-    display: inline-block;
-    height: 56px;
-    padding: 18px 50px;
-    width: auto;
-    font-size: 20px;
-    margin: 10px;
+    display: flex;
+    text-decoration: none;
+    padding: 16px;
+    width: 100vw;
+    bottom: 0;
+    margin-bottom: -1px;
+    position: fixed;
+    z-index: 99;
+    justify-content: center;
+}
+
+.float-button {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 20;
+  width: 100%;
 }
 
 @media(max-width: 576px) {
@@ -800,8 +812,11 @@ ul.responses li.incorrect p span {
         border: none;
         border-radius: 0;
         font-size: 13px;
+        display: flex;
         margin: 0;
-        padding: 1px 10px;
+        padding: 1px 20px;
+        justify-content: center;
+        align-items: center;
     }
     .float-button {
       display: flex;
@@ -809,6 +824,7 @@ ul.responses li.incorrect p span {
       position: fixed;
       bottom: 0;
       z-index: 20;
+      width: 100%;
     }
 
     .padding-mobile {
@@ -816,7 +832,45 @@ ul.responses li.incorrect p span {
     }
 }
 
+.reference-title-head {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-align: left;
+}
 
+.reference-text-link {
+  align-items: center;
+  color: #3c3c3c;
+  display: flex;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.references{
+  padding-bottom: 10px;
+  margin-left: 50px;
+}
+
+@media(max-width: 576px) {
+  .references {
+    margin-left: 0;
+    text-align: left;
+    padding: 20px;
+  }
+}
+
+.external-link-svg svg {
+  align-items: center;
+  display: flex;
+  margin-left: 5px;
+  width: 15px;
+}
+
+.soalan-link-svg-fill {
+  fill: #41c0f1;
+}
 
 .quizShortText {
   font-size: 20px;

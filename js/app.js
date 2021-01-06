@@ -36,7 +36,7 @@
                 backButtonText: '',
                 completeQuizText: '',
                 tryAgainText: '',
-                questionCountText: 'Question %current of %total',
+                questionCountText: '<span class="en-text">Question %current of %total</span><span class="bm-text">Soalan %current daripada %total</span>',
                 preventUnansweredText: 'You must select at least one answer.',
                 questionTemplateText:  '%count. %text',
                 scoreTemplateText: '%score / %total',
@@ -313,8 +313,8 @@ let headertemp = `<header class="container-fluid header" onclick="openAlert()">
                         if (plugin.config.displayQuestionCount) {
                             questionHTML.append('<div class="' + questionCountClass + '">' +
                                 plugin.config.questionCountText
-                                    .replace('%current', '<span class="current">' + count + '</span>')
-                                    .replace('%total', '<span class="total">' +
+                                    .replace(/%current/g, '<span class="current">' + count + '</span>')
+                                    .replace(/%total/g, '<span class="total">' +
                                         questionCount + '</span>') + '</div>');
                         }
 
@@ -843,20 +843,17 @@ let langPack = {
     en: {
       "b-start":'Get Started!',
     //   "b-score":'You Scored: ',
-    //   "b-level":'Ranking: ',
+    //    "b-level":'Ranking: ',
       "b-shortText":'DoctorOnCall has a wide range of vaccines which extends past those offered within the National Immunization Program (NIP) – book an appointment with one of our doctors to get further protection for you and your child!',
-      "b-ask":'Click HERE to ask free question',
-      "b-speak":'Click HERE to consult our doctors'
+      "b-ask":'FREE Doctor Consult: Coupon code "JOMQUIT"'
       
     },
     bm: {
         "b-start":'Mula Menjawab',
-        // "b-score":'Markah Anda: ',
-        // "b-level":'Kategori: ',
+        //  "b-score":'Markah Anda: ',
+        //  "b-level":'Kategori: ',
         "b-shortText":'DoctorOnCall mempunyai pelbagai jenis vaksin seperti yang ditawarkan dalam Program Imunisasi Nasional (NIP) - buat janji temu dengan salah seorang doktor kami untuk mendapatkan perlindungan lebih lanjut bagi anda dan keluarga anda!',
-        "b-ask":'Tanya Soalan Secara Percuma',
-        "b-speak":'Konsultasi Doktor Atas Talian'
-        
+        "b-ask":'Nasihat Doktor PERCUMA: Coupon code "JOMQUIT"'
     }
     }
 
